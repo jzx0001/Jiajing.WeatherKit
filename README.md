@@ -1,19 +1,46 @@
-# iRingo WeatherKit β · 缪斯定制版（Surge 模块）
+#  iRingo: 🌤️ WeatherKit β · 缪斯定制版
 
-参考 NSRingo/WeatherKit 官方项目的组织方式建立。基于 VirgilClyne 的 iRingo WeatherKit **dev 版**模块定制。原版：
-https://gist.githubusercontent.com/VirgilClyne/862db28df04be7523476d10b61b128f2/raw/iRingo.WeatherKit.dev.sgmodule
+## 简介
 
-## 定制内容（详见 modules/iRingo.WeatherKit.fixed.sgmodule 的提交历史）
+- 基于 `iRingo WeatherKit` **dev 版**模块定制（原版见文末链接）
+- 修复「体感温度」不显示
+- 「空气质量指数」改为美国标准显示
+- 零配置：全部参数已内置，安装后无需任何设置
 
-1. **参数修正**：天气数据源改回 `WeatherKit`（原版默认彩云替换）；今日空气指数改用彩云美标 `ColorfulCloudsUS`；储存方式改 `Argument`（dev 版默认 PersistentStore 会让 Surge 参数修改不生效）。
-2. **零配置版**：全部参数焊死进脚本，删掉参数区——Surge 里不再有显示不全的参数页，装上即用。
-3. **天气数据透传版**：响应脚本不再处理「当前天气 / 逐时预报 / 每日预报」三块数据（原样透传 Apple 数据），修复体感温度在脚本重组数据时丢失的问题；空气质量、下一小时降水、天气预警仍走脚本处理。
+## 定制内容
 
-效果：AQI 显示美标指数；体感温度正常显示。
+- `[天气] 数据源`：`WeatherKit`（保留 Apple 原始天气数据，不再由彩云替换）
+- `[今日空气指数] 数据源`：彩云天气美标指数 `ColorfulCloudsUS`，替换目标仍为中国标准条目——天气 App 显示的即为美标数值与等级
+- `[储存] 配置类型`：`Argument`（dev 版默认为 `PersistentStore`，会导致 Surge 里改的参数不生效）
+- **参数内置**：全部参数已写死进脚本，模块不再带参数区，Surge 里不会再出现显示不全的参数页
+- **天气数据透传**：响应脚本不再处理「当前天气」「逐时预报」「每日预报」三块数据，原样透传 Apple 原始数据——体感温度就是在脚本重组这三块数据时被丢掉的；「空气质量」「未来一小时降水」「天气预警」仍由脚本处理
 
-## Surge 安装 / 更新
+## 修改记录
 
-模块地址（在 Surge 里：配置 → 模块 → ＋ → 粘贴）：
-https://raw.githubusercontent.com/jzx0001/iRingo.WeatherKit.fixed/main/modules/iRingo.WeatherKit.fixed.sgmodule
+见 `modules/iRingo.WeatherKit.fixed.sgmodule` 的提交历史：
 
-以后缪斯的修改都会以提交形式出现在这里，在 Surge 里点模块「更新」即可同步。
+1. 原版：iRingo WeatherKit β dev 模块（未改动）
+2. 参数修正：天气数据源=WeatherKit，AQI 指数=彩云美标，储存=Argument
+3. 零配置版：参数全部焊死进脚本，删掉参数区
+4. 天气数据透传：修体感温度丢失，AQI/降水/预警不变
+
+## 安装链接
+
+Surge，模块，HTTPS 解密
+
+---
+
+**安装路径**
+
+配置 > 模块 > 右上角加号
+
+**模块地址**
+
+`https://raw.githubusercontent.com/jzx0001/iRingo.WeatherKit.fixed/main/modules/iRingo.WeatherKit.fixed.sgmodule`
+
+安装后在模块列表中点「更新」，即可同步本仓库的最新提交。
+
+## 原版
+
+- 模块原版（VirgilClyne）：https://gist.githubusercontent.com/VirgilClyne/862db28df04be7523476d10b61b128f2/raw/iRingo.WeatherKit.dev.sgmodule
+- 官方项目（NSRingo/WeatherKit）：https://github.com/NSRingo/WeatherKit
