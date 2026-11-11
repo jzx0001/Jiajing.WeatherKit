@@ -37,7 +37,7 @@ Surge，模块，HTTPS 解密
 
 **模块地址**
 
-`https://raw.githubusercontent.com/jzx0001/iRingo.WeatherKit.fixed/main/modules/iRingo.WeatherKit.fixed.sgmodule`
+`https://raw.githubusercontent.com/jzx0001/Jiajing.WeatherKit/main/modules/iRingo.WeatherKit.fixed.sgmodule`
 
 安装后在模块列表中点「更新」，即可同步本仓库的最新提交。
 
