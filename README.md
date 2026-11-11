@@ -45,3 +45,8 @@ Surge，模块，HTTPS 解密
 
 - 模块原版（VirgilClyne）：https://gist.githubusercontent.com/VirgilClyne/862db28df04be7523476d10b61b128f2/raw/iRingo.WeatherKit.dev.sgmodule
 - 官方项目（NSRingo/WeatherKit）：https://github.com/NSRingo/WeatherKit
+
+## 版本与分支
+- `main`：正式线，Surge 安装/更新走这条线的 raw 链接。
+- `dev`：试验线，候选版先上 dev 逐项验收，通过后再合并进 main。
+- 发行版：v1.0.0「天气透传版（首个正式版）」已发布；v2.0.0 预留给「背景＋体感」两全版，验收通过再发。
